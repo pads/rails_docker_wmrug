@@ -1,0 +1,8 @@
+{
+  "name": "WMRUG Docker Rails",
+  "description": "An example Rails app in Docker for WMRUG",
+  "image": "heroku/ruby",
+  "addons": [
+    "heroku-postgresql"
+  ]
+}
