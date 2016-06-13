@@ -7,6 +7,7 @@ env:
   DOCKER_COMPOSE_VERSION: 1.7.1
 
 before_install:
+  - sudo /etc/init.d/postgresql stop
   - sudo apt-get -qq update
   - sudo apt-get -qqy -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install --only-upgrade docker-engine
   - sudo rm /usr/local/bin/docker-compose
@@ -15,7 +16,6 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose -v
   - docker -v
-  - ./build.sh
   - docker-compose up -d
   - docker ps
 
