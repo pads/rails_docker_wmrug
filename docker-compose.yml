@@ -13,6 +13,7 @@ services:
       - "1025:1025"
   web:
     build: .
+    image: pads/rails-docker-wmrug:latest
     command: bin/rails server --port 3000 --binding 0.0.0.0
     ports:
       - "3000:3000"
