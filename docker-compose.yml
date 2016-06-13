@@ -4,6 +4,8 @@ services:
     image: postgres:latest
     ports:
       - "5432:5432"
+    volumes:
+      - ./initdb.sh:/docker-entrypoint-initdb.d/init-wmrug-db.sh
   email:
     image: schickling/mailcatcher
     ports:
