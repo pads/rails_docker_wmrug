@@ -11,6 +11,13 @@ services:
     ports:
       - "1080:1080"
       - "1025:1025"
+  selenium:
+    image: selenium/standalone-firefox-debug:2.53.0
+    environment:
+      no_proxy: localhost
+    ports:
+      - "4444:4444"
+      - "5900:5900"
   web:
     build: .
     image: pads/rails-docker-wmrug:latest
@@ -20,5 +27,6 @@ services:
     links:
       - db
       - email
+      - selenium
     volumes:
       - .:/wmrug

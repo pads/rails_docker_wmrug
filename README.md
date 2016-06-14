@@ -11,6 +11,8 @@ Dockerized Rails application for [WMRUG](http://www.meetup.com/West-Midlands-Rub
 
 This assumes you are running Docker either natively on Linux or Docker for Mac.
 
+Symlink `docker-exec` to a bin directory in your `PATH` and use this to run your usual rails/rake commands.
+
     docker-compose up -d
 
 Open `http://localhost:3000` in your browser.     
