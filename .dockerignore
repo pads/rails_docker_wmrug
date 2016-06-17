@@ -6,3 +6,6 @@
 *.sh
 *.md
 .gitignore
+
+# postgres volume
+postgres

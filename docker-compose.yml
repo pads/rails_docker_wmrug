@@ -5,6 +5,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
+      - ./postgres:/var/lib/postgresql/data
       - ./initdb.sh:/docker-entrypoint-initdb.d/init-wmrug-db.sh
   email:
     image: schickling/mailcatcher
@@ -18,10 +19,12 @@ services:
     ports:
       - "4444:4444"
       - "5900:5900"
-  web:
+  app:
     build: .
     image: pads/rails-docker-wmrug:latest
-    command: bin/rails server --port 3000 --binding 0.0.0.0
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    stdin_open: true
+    tty: true
     ports:
       - "3000:3000"
     links:

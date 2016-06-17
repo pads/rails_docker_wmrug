@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # Run commands from within the running Rails container
-docker-compose run web $@
+docker-compose run app $@

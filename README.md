@@ -13,6 +13,8 @@ This assumes you are running Docker either natively on Linux or Docker for Mac.
 
 Symlink `docker-exec` to a bin directory in your `PATH` and use this to run your usual rails/rake commands.
 
+    docker volume create --name postgres
     docker-compose up -d
+    docker-exec rake db:migrate
 
 Open `http://localhost:3000` in your browser.     
